@@ -1,11 +1,51 @@
 @extends('layouts.default')
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENSAJ</title>
+    <style>
+    @import url(https://www.w3schools.com/w3css/4/w3.css);
+    @import url(https://fonts.googleapis.com/css?family=Raleway); 
+    
+
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+	width: 100%;
+	height:100%;
+	font-family: 'Open Sans', sans-serif;
+	background: linear-gradient(to bottom right, #00008B, #FFC0CB);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='blue', endColorstr='pink',GradientType=1 );
+}
+input { 
+	width: 100%; 
+	margin-bottom: 10px; 
+	background: hsla(0, 100%, 90%, 0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: none;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	
+}
+
+</style>
+</head>
+<body>
+<div class="email">
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+                <div class="card-header">{{ __('Réinitialiser le mot de passe') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -18,7 +58,7 @@
                         @csrf
 
                         <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse email') }}</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -34,7 +74,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
+                                    {{ __('Envoyer le lien de réinitialisation') }}
                                 </button>
                             </div>
                         </div>
@@ -45,3 +85,6 @@
     </div>
 </div>
 @endsection
+</div>
+</body>
+</html>
